@@ -1,6 +1,5 @@
 package Practice;
-//В следующем задании нужно будет развернуть буквы в строке, оставив все небуквенные символы на своих
-// местах. Здесь — строительные блоки, из которых вы соберёте решение сами
+
 
 public class ReverseLetter {
     public static void main(String[] args) {
@@ -31,8 +30,8 @@ public class ReverseLetter {
                 arrayText[left] = result;
                 left++;
                 right--;
-            } //if нет букв на пути
-        } //основн цикл while
+            } 
+        } 
         System.out.println(new String(arrayText));
     }
 }
