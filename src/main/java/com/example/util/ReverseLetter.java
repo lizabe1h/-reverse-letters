@@ -5,6 +5,9 @@ package com.example.util;
 public class ReverseLetter {
 
     public static String reverse(String text) {
+        if (text== null) {
+            throw new NullPointerException("Строка не должна быть null");
+        }
         char[] arrayText = text.toCharArray(); //получаем массив символов
         int left = 0;
         int right = arrayText.length - 1;
@@ -28,6 +31,7 @@ public class ReverseLetter {
 
 
     }
+
 }
 
 

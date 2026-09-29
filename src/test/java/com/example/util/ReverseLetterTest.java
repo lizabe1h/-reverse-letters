@@ -3,6 +3,9 @@ package com.example.util;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 public class ReverseLetterTest {
 
@@ -71,27 +74,34 @@ public class ReverseLetterTest {
         String actual = ReverseLetter.reverse(textInitial);
 
         //assert - проверка
-        Assertions.assertEquals(expected, actual,"переворачивает только буквы" );
+        Assertions.assertEquals(expected, actual, "переворачивает только буквы");
     }
 
     @Test
-   public void leaveSymbolsNotTheLetters(){
+    public void leaveSymbolsNotTheLetters() {
         String textInitial = "123!. Hello321!bye";
         String expected = "123!. eybol321!leH";
 
         String actual = ReverseLetter.reverse(textInitial);
 
-        Assertions.assertEquals(expected,actual, "небуквенный символы остаются на местах");
+        Assertions.assertEquals(expected, actual, "небуквенный символы остаются на местах");
     }
 
     @Test
-    public void returnTheSameRegister(){
+    public void returnTheSameRegister() {
         String textInitial = "ПривЕт";
         String expected = "тЕвирП";
 
         String actual = ReverseLetter.reverse(textInitial);
 
-        Assertions.assertEquals(expected,actual, "регистр остается без изменений");
+        Assertions.assertEquals(expected, actual, "регистр остается без изменений");
+    }
+
+    @Test
+    public void nullCheck() {
+        NullPointerException exception = assertThrows(NullPointerException.class, () -> ReverseLetter.reverse(null));
+        assertEquals("Строка не должна быть null", exception.getMessage());
+
     }
 
 }
